@@ -496,3 +496,7 @@ section.chrt3 {
     right: 0 !important;
     background: #6f6486;
 }
+
+.alert-danger {
+    margin-top: 25px;
+    }

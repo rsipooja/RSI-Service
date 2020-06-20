@@ -8,12 +8,15 @@ import { Routes, RouterModule, ActivatedRoute, Router } from '@angular/router';
 export class AuthenticationService {
 	private readonly testuser = new SignInData('pooja', 'pooja@123');
 	isAuth = false;
+    sessionValue: string = "";
 
     constructor(private route:ActivatedRoute, private router: Router) { }
 
     authenticate(signInData: SignInData):boolean {
     	if(this.chkUser(signInData)){
     		this.isAuth = true;
+            this.sessionValue = sessionStorage.getItem("user_name");
+            console.log(this.sessionValue);
             this.router.navigate(['/dashboard']);
     		return true;
     	}

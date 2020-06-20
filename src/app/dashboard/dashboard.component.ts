@@ -7,7 +7,7 @@ import { AuthenticationService } from '../service/authentication.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
+  username = this.authenticationService.sessionValue;
   constructor(public authenticationService: AuthenticationService) { }
 
   ngOnInit(): void {
