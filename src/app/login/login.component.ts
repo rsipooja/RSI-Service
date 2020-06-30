@@ -19,10 +19,10 @@ export class LoginComponent implements OnInit {
   }
   
   onSubmit(loginForm: NgForm){
-    if(loginForm.valid){
-      console.log("hii");
+    if(loginForm.value.username === '' || loginForm.value.pass === ''){
       this.isvalidLogin = true;
       this.isvalidCred = false;
+      return;
     }
     else{
       this.checkUserCred(loginForm);
